@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<!-- 밑의 네임스페이스랑 파일네임이랑 인터페이스 이름이 같아야 메소드를 걸어준다 -->
+<mapper namespace="kr.childsafe.mapper.Childmapper">
+    
+    <!-- resultType은 갖고온걸 저기 vo에 묶어주는것임 -->
+    <!-- 회원정보 띄워볼려고 만들어놓은것  -->
+	<select id="memberList" resultType="kr.childsafe.domain.TMember">
+	select * from t_member
+	</select>
+	
+<!-- member관련 -->
+    <!-- 회원가입  -->
+	<insert id="join" parameterType="kr.childsafe.domain.TMember">
+		insert into t_member(mem_id,mem_pw,mem_name,mem_birthdate,mem_phone, mem_email, mem_addr, mem_joindate, admin_yn) 
+		VALUES (#{mem_id}, #{mem_pw}, #{mem_name}, #{mem_birthdate}, #{mem_phone}, #{mem_email},#{mem_addr}, sysdate, 'N')    
+	</insert>
+	
+	<!-- 로그인 -->
+	<select id="login" resultType="kr.childsafe.domain.TMember">
+	   	select * from t_member where mem_Id=#{mem_id} and mem_Pw =#{mem_pw}
+	</select>
+	
+	<!-- 회원정보 수정 -->
+	<update id="memberUpdate">
+	    update t_member set 
+	    mem_pw=#{mem_pw},
+	    mem_name=#{mem_name},
+	    mem_birthdat=#{mem_birthdate},
+	    mem_phone=#{mem_phone},
+	    mem_email=#{mem_email},
+	    mem_addr=#{mem_addr} where mem_id=#{mem_id}
+	</update>
+	
+<!-- 유아/어린이 밀도 관련 -->
+	<!-- [Ajax] 위도경도 select -->
+    <select id="cDensityAjax" resultType = "kr.childsafe.domain.TPopulationDensity_wll">
+        select population_density, latitude, longitude from T_POPULATION_DENSITY
+    </select>   
+    
+<!-- 스쿨존 사고 다발지점 관련 -->
+    <!-- [Ajax]모든정보 불러오기 -->    
+    <select id="szAccidentAjax" resultType = "kr.childsafe.domain.SzAccident">
+        select * from t_sz_accident        
+    </select>
+    
+    <!-- [Ajax]광주정보만 모든정보 불러오기 -->
+      <select id="szAccidentGwangjuAjax" resultType = "kr.childsafe.domain.SzAccident">
+        select * from t_sz_accident where sa_spot like '광주광역시%'      
+    </select>
+    
+<!-- 스쿨존 현황 관련 -->
+    <!-- [Ajax]모든정보 불러오기 -->  
+    <select id="schoolZoneAjax" resultType = "kr.childsafe.domain.TSchoolZone">
+        select * from t_school_zone
+    </select>
+    
+    <!-- [Ajax]광주정보만 모든정보 불러오기 -->
+    <select id="schoolZoneGwangjuAjax" resultType = "kr.childsafe.domain.TSchoolZone">
+     select * from t_school_zone where sz_addr like '광주광역시%'
+    </select>
+	
+</mapper>

@@ -1,0 +1,78 @@
+header.menu { position: absolute; left: 0; top: 0; bottom: 0; overflow: auto; width: auto; background: #223b37; box-shadow: 0 0 10px rgba(0,0,0,.2); z-index: 99; }
+header.menu .title,
+header.menu nav button { background: #223b37; width: 80px; height: auto; display: block; text-align: center; padding: 54px 0 10px; box-sizing: border-box; line-height: 16px; font-weight: 500; color: #919d9b; position: relative; }
+header.menu .title h1 a:before,
+header.menu nav button:before { content: ''; display: block; position: absolute; left: 0; right: 0; top: 0; height: 56px; background: center no-repeat; }
+header.menu .title h1 a:before { background-image: url('../images_renew/map/logo.png'); }
+header.menu .title h1 a { display: block; width: 100%; height: 100%; z-index: 1; }
+header.menu .title button { display: none; }
+header.menu nav button { border-top: 1px solid #516561; border-bottom: 1px solid #000; padding-top: 52px; }
+header.menu nav button:before { opacity: .5; transition: opacity .3s; }
+header.menu nav button.total:before { background-image: url('../images_renew/map/menu-total.png'); }
+header.menu nav button.statistics:before { background-image: url('../images_renew/map/menu-statistics.png'); }
+header.menu nav button.change:before { background-image: url('../images_renew/map/menu-change.png'); }
+header.menu nav button.history:before { background-image: url('../images_renew/map/menu-history.png'); }
+header.menu nav button.north:before { background-image: url('../images_renew/map/menu-north.png'); }
+header.menu nav button.hdmap:before { background-image: url('../images_renew/map/menu-hdmap.png'); }	/* 정밀도로지도 추가  */
+header.menu nav button.world:before { background-image: url('../images_renew/map/menu-info-world.png'); }
+header.menu nav button.neighbor:before { background-image: url('../images_renew/map/menu-info-neighbor.png'); }
+header.menu nav button.complete:before { background-image: url('../images_renew/map/menu-info-complete.png'); }
+header.menu nav button.download:before { background-image: url('../images_renew/map/menu-info-download.png'); }
+header.menu nav button.subject:before { background-image: url('../images_renew/map/menu-polar-subject.png'); }
+header.menu nav button.sPosition:before { background-image: url('../images_renew/map/menu-polar-sposition.png'); }
+header.menu nav button.sInfo:before { background-image: url('../images_renew/map/menu-polar-sinfo.png'); }
+header.menu nav button.sState:before { background-image: url('../images_renew/map/menu-polar-sstate.png'); }
+header.menu nav button.nWeather:before { background-image: url('../images_renew/map/menu-polar-nweather.png'); }
+header.menu nav button.nRoad:before { background-image: url('../images_renew/map/menu-polar-nroad.png'); }
+header.menu nav button.korean:before { background-image: url('../images_renew/map/menu-korean.png'); }
+header.menu nav button.english:before { background-image: url('../images_renew/map/menu-english.png'); }
+header.menu nav button.legend:before { background-image: url('../images_renew/map/menu-legend.png'); }
+header.menu nav button.position:before { background-image: url('../images_renew/map/menu-position.png'); }
+header.menu nav button.survey:before { background-image: url('../images_renew/map/menu-survey.png'); }
+header.menu nav button.daedong:before { background-image: url('../images_renew/map/menu-daedong.png'); }
+header.menu nav button.samil:before { background-image: url('../images_renew/map/menu-threeone.png'); }
+header.menu nav button.ancient:before { background-image: url('../images_renew/map/menu-oldmap.png'); }
+header.menu nav button.landSatellite:before { background-image: url('../images_renew/map/menu-landsatellite.png'); }
+
+
+header.menu .sw_bottom{position:absolute;bottom:0;width:100%;}
+header.menu .sw_bottom button{display:block;text-align:center;width:100%;height: auto;padding: 38px 0 5px;border-top: 1px solid #000000;background:#111d1b}
+header.menu .sw_bottom button:before{content: ''; display: block; position: absolute; left: 0; right: 0; top: 0; height: 45px; background: center no-repeat;opacity: .5; transition: opacity .3s; background-image: url('../images_renew/map/menu-swdown.png');}
+header.menu .sw_bottom button:hover,
+header.menu .sw_bottom button:focus { color: #fff; }
+header.menu .sw_bottom button:hover:before,
+header.menu .sw_bottom button:focus:before { opacity: 1; }
+
+
+header.menu .title { color: #fff; border-top: 0 none; }
+header.menu nav button:hover,
+header.menu nav button:focus { color: #fff; }
+header.menu nav button:hover:before,
+header.menu nav button:focus:before { opacity: 1; }
+header.menu nav button.on { border: 0 none; padding-top: 53px; background-color: #f26d7d; color: #fff; }
+header.menu nav button.on:before { opacity: 1; }
+header.menu nav button span { display: block; }
+header.menu nav button.language,
+header.menu nav button.legend { background: #111d1b; border-top: 1px solid #000; border-bottom: 0 none; position: absolute; bottom: 0; left: 0; right: 0; padding: 49px 0 15px; }
+header.menu nav button.language:before,
+header.menu nav button.legend:before { border-top: 1px solid #283230; }
+
+body:not(.noResponsive) header.menu .title button.menu,
+body:not(.noResponsive) header.menu .title button.viewMap { position: absolute; width: 40px; height: 40px; right: 0; top: 0; text-indent: -999px; overflow: hidden; }
+body:not(.noResponsive) header.menu .title button.viewMap { right: 40px; }
+body:not(.noResponsive) header.menu .title button.viewMap i { position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto; width: 20px; height: 4px; border: 2px solid #fff; }
+body:not(.noResponsive) header.menu .title button.viewMap i:before,
+body:not(.noResponsive) header.menu .title button.viewMap i:after { content: ''; display: block; position: absolute; left: 0; right: 0; margin: 0 auto; width: 0; height: 0; border: solid transparent; border-width: 0 3px; transition: all .3s; }
+body:not(.noResponsive) header.menu .title button.viewMap i:before { border-top: 3px solid #fff; bottom: 9px; }
+body:not(.noResponsive) header.menu .title button.viewMap i:after { border-bottom: 3px solid #fff; top: 9px; }
+body:not(.noResponsive) header.menu .title button.menu i,
+body:not(.noResponsive) header.menu .title button.menu:before,
+body:not(.noResponsive) header.menu .title button.menu:after { content: ''; position: absolute; width: 24px; left: 0; right: 0; top: 0; bottom: 0; margin: auto; background: #fff; height: 2px; transition: all .3s; }
+body:not(.noResponsive) header.menu .title button.menu:before { bottom: 16px; }
+body:not(.noResponsive) header.menu .title button.menu:after { top: 16px; }
+body:not(.noResponsive) header.menu.on { top: 0; }
+body:not(.noResponsive) header.menu.on .title button.menu i { width: 0; }
+body:not(.noResponsive) header.menu.on .title button.menu:before { transform: rotate(-45deg); bottom: 0; }
+body:not(.noResponsive) header.menu.on .title button.menu:after { transform: rotate(45deg); top: 0; }
+body:not(.noResponsive) header.menu .title button.currentMap { float: left; opacity: .8; padding-left: 20px; position: relative; font-weight: 400; }
+body:not(.noResponsive) header.menu .title button.currentMap:before { content: ''; position: absolute; left: 5px; top: 0; bottom: 0; margin: auto 0; height: 1px; background: #fff; opacity: .8; width: 10px; }
